@@ -47,6 +47,7 @@
     "react-native-button": "^2.3.0",
     "react-native-calendar-events": "^1.7.3",
     "react-native-cards": "^1.1.4",
+    "react-native-code-push": "^5.7.0",
     "react-native-communications": "^2.2.1",
     "react-native-cookies": "^3.2.0",
     "react-native-device-info": "^0.29.1",

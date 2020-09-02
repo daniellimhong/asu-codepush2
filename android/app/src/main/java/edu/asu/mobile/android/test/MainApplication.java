@@ -48,6 +48,8 @@ import java.util.Date;
 import java.util.List;
 import android.webkit.WebView;
 
+import com.microsoft.codepush.react.CodePush;
+
 public class MainApplication extends Application implements ReactApplication {
 
     Cursor catalystLocalStorage = null;
@@ -59,6 +61,11 @@ public class MainApplication extends Application implements ReactApplication {
     @Override
     public boolean getUseDeveloperSupport() {
       return BuildConfig.DEBUG;
+    }
+
+     @Override
+     protected String getJSBundleFile() {
+        return CodePush.getJSBundleFile();
     }
 
     @Override
@@ -78,6 +85,7 @@ public class MainApplication extends Application implements ReactApplication {
 
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(appConfig),
+            new CodePush("BypvoXY3yCIMYldnP2Ulas50wWxtr1i_UX07V", MainApplication.this, BuildConfig.DEBUG),
             new NetInfoPackage(),
             new LinearGradientPackage(),
             new LocationServicesDialogBoxPackage(),

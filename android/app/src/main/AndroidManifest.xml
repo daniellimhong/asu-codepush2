@@ -1,0 +1,135 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="edu.asu.mobile.android.test"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <permission
+        android:name="${applicationId}.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="${applicationId}.permission.C2D_MESSAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_CALENDAR" />
+    <uses-sdk android:targetSdkVersion="22" />
+
+    <application
+      android:name=".MainApplication"
+      android:allowBackup="true"
+      android:label="@string/app_name"
+      android:icon="@mipmap/ic_launcher"
+      android:usesCleartextTraffic="true"
+      android:theme="@style/AppTheme">
+      <activity
+        android:name=".MainActivity"
+        android:launchMode="singleTop"
+        android:label="@string/app_name"
+        android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+        android:windowSoftInputMode="adjustResize">
+        <intent-filter>
+            <action android:name="android.intent.action.VIEW" />
+            <category android:name="android.intent.category.DEFAULT" />
+            <category android:name="android.intent.category.BROWSABLE" />
+            <data android:scheme="asumobile" />
+        </intent-filter>
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+      </activity>
+      <activity android:name="com.facebook.react.devsupport.DevSettingsActivity" />
+        <receiver
+            android:name="com.google.android.gms.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="${applicationId}" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".geofence.GeofenceBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".geofence.GeofenceTransitionsJobIntentService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service android:name=".location.LocationService"
+                 android:enabled="true"/>
+        <receiver android:name="edu.asu.push.modules.RNPushNotificationPublisher" />
+        <receiver android:name="edu.asu.push.modules.RNPushNotificationBootEventReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="edu.asu.push.modules.RNPushNotificationRegistrationService"/>
+        <service
+            android:name="edu.asu.push.modules.RNPushNotificationListenerServiceGcm"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+
+        <service android:name="edu.asu.push.modules.RNPushNotificationActionService" />
+        <service android:name="edu.asu.push.modules.RNPushNotificationReplyService" />
+        <service android:name="edu.asu.push.modules.RNPushNotificationSilentTask" />
+
+        <service android:name="edu.asu.push.modules.RNPushNotificationSilentService"
+                 android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <receiver
+            android:name="edu.asu.push.modules.RNPushNotificationReplyReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
+        <receiver android:name="edu.asu.push.modules.RNPushNotificationActionHandlerReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="${applicationId}.Accept" />
+                <action android:name="${applicationId}.Activate" />
+                <action android:name="${applicationId}.Allow" />
+                <action android:name="${applicationId}.ASU101" />
+                <action android:name="${applicationId}.Awesome" />
+                <action android:name="${applicationId}.Call" />
+                <action android:name="${applicationId}.CallCoachNow" />
+                <action android:name="${applicationId}.Chat" />
+                <action android:name="${applicationId}.Deny" />
+                <action android:name="${applicationId}.DontAllow" />
+                <action android:name="${applicationId}.Done" />
+                <action android:name="${applicationId}.Email" />
+                <action android:name="${applicationId}.Ignore" />
+                <action android:name="${applicationId}.WantToGo" />
+                <action android:name="${applicationId}.LearnMore" />
+                <action android:name="${applicationId}.Likely" />
+                <action android:name="${applicationId}.Login" />
+                <action android:name="${applicationId}.MoreInformation" />
+                <action android:name="${applicationId}.No" />
+                <action android:name="${applicationId}.NotInterested" />
+                <action android:name="${applicationId}.NotNow" />
+                <action android:name="${applicationId}.Okay" />
+                <action android:name="${applicationId}.OpenApp" />
+                <action android:name="${applicationId}.OpenLink" />
+                <action android:name="${applicationId}.Orientation" />
+                <action android:name="${applicationId}.Register" />
+                <action android:name="${applicationId}.Reject" />
+                <action android:name="${applicationId}.Respond" />
+                <action android:name="${applicationId}.ShareNow" />
+                <action android:name="${applicationId}.TakeMeThere" />
+                <action android:name="${applicationId}.Unlikely" />
+                <action android:name="${applicationId}.Yes" />
+            </intent-filter>
+        </receiver>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="811f0b5f414190028b89c5270f1c358ca8cb6909"
+        />
+    </application>
+</manifest>

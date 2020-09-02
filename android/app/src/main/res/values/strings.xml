@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ASU</string>
+    <string name="account_type">edu.asu.asumobileapp</string>
+    <string name="content_authority">edu.asu.asumobileapp</string>
+</resources>

@@ -1,0 +1,28 @@
+# Uncomment the next line to define a global platform for your project
+ platform :ios, '11.3'
+
+target 'asumobileapp' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for asumobileapp
+  pod 'AmazonIVSPlayer'
+  pod 'Firebase/Crashlytics'
+
+
+end
+
+target 'asumobileapp-tvOS' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for asumobileapp-tvOS
+end
+
+target 'ASUNotificationExtension' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for ASUNotificationExtension
+
+end

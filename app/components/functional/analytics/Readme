@@ -1,0 +1,49 @@
+Achievement - Folder:
+  Header
+    Header_DrawerOpen
+    Header_Notifications
+  CoreFeature:
+    CFInfinite:
+      Events_back
+      Events_homeSettings
+      Events_detailsView_back
+      Events_detailsView_homeSettings
+
+      News_back
+      News_homeSettings
+      News_detailsView_back
+      News_detailsView_homeSettings
+    CFPreview:
+      CFPreview_item
+  Home:
+    HomeSettings
+
+
+
+Functional - Folder:
+Schedule: Done
+  Schedule_meeting_location
+Notification:
+  Notifications_togglecancel
+
+  Advising - No Touchable and can't see on the app.
+  Authentication - Yet to Do
+  Directory - No Touchable and can't see on the app.
+  EADVISOR - No Touchable and can't see on the app.
+  Events - Done
+  Finance - No Touchable and can't see on the app.
+  geolocation - No Touchable and can't see on the app.
+  maps - Done
+  News - Done
+  Notifications -
+    index.js - Commented Code - Didn't Test.
+    notificationSetup - no Touchables - need to handle the buttons on notification
+
+  Schedule: Done
+  transportation - No Touchable and can't see on the app.
+
+
+
+Universal:
+  Task:
+    messageCtrTask - done

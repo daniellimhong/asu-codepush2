@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<RCTScrollView>
+  <View>
+    <View
+      style={
+        Array [
+          Object {
+            "display": "flex",
+            "flex": 1,
+          },
+          undefined,
+        ]
+      }
+    >
+      <ActivityIndicator
+        animating={true}
+        color="black"
+        hidesWhenStopped={true}
+        size="small"
+      />
+    </View>
+  </View>
+</RCTScrollView>
+`;

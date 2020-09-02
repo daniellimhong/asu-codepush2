@@ -1,0 +1,11 @@
+{
+  "notification": "You must open your Notification Settings of your device to change preferences",
+  "location": "We use your location to notify you of nearby events. Open your device settings to change location sharing preferences.",
+  "sharing": "These global sharing options will enable or disable the ability of your friends to see your academic or social activities in your feed.",
+  "chat": "This option will enable or disable the ability to chat with others.",
+  "covid_daily_health_checks": "Share COVID symptom related health records",
+  "covid_test_records": "Share COVID test related health records",
+  "covid_location_tracking": "Share my location",
+  "covid_remind_via_push": "Remind me via push notifications",
+  "covid_remind_via_email": "Remind me via email"
+}

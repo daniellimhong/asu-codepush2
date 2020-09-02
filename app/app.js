@@ -24,6 +24,7 @@ import { CanvasProvider } from "./components/functional/authentication/canvas_co
 import Covid19Onboarding from "./components/achievement/Home/covid19Wellness/Covid19onboarding";
 import { callApi } from "./components/functional/authentication/auth_components/weblogin/cookies";
 import AWSAppSyncClient from "aws-appsync";
+import codePush from "react-native-code-push";
 
 const id = "N2FtUnNrUXJ0S3pBYWNoaWV2ZW1lbnQ=";
 const ref =
@@ -69,7 +70,7 @@ export const client = new AWSAppSyncClient({
 
 console.disableYellowBox = true;
 
-export default class App extends Component {
+export class App extends Component {
   _timeout = null;
 
   componentDidCatch(error, info) {
@@ -119,6 +120,12 @@ export default class App extends Component {
     );
   }
 }
+
+const codePushOptions = {
+  checkFrequency: codePush.CheckFrequency.ON_APP_RESUME,
+};
+
+export default codePush(codePushOptions)(App);
 
 const styles = StyleSheet.create({
   container: {

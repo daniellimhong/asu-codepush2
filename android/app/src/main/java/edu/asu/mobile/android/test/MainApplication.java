@@ -85,7 +85,7 @@ public class MainApplication extends Application implements ReactApplication {
 
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(appConfig),
-            new CodePush("BypvoXY3yCIMYldnP2Ulas50wWxtr1i_UX07V", MainApplication.this, BuildConfig.DEBUG),
+            new CodePush(BuildConfig.CODEPUSH_KEY, MainApplication.this, BuildConfig.DEBUG),
             new NetInfoPackage(),
             new LinearGradientPackage(),
             new LocationServicesDialogBoxPackage(),
